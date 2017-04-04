@@ -14,11 +14,11 @@ public class Calculator {
 							 p2:['+','-']]
 	
 	def getKeyByValue(map, val) {
-		 map.each{
+		map.find{
 			if(it.value.contains(val)) {
-				 return it.find()?.key
-			}	
-		}
+				it.find()?.key
+				}
+			}?.key
 	}
 	
 	public static void main(String [ ] args) {
@@ -34,7 +34,7 @@ public class Calculator {
 			  gridLayout(columns: 4, rows: 5)
 			  
 			  button(text : '7', actionPerformed : {equation.text += it.source.text; stack.push(it.source.text)})
-			  button(text : '8', actionPerformed : {equation.text += it.source.text; println getKeyByValue(operationsPrioMap, '*')})
+			  button(text : '8', actionPerformed : {equation.text += it.source.text; println getKeyByValue(operationsPrioMap, '(')})
 			  button(text : '9', actionPerformed : {equation.text += it.source.text})
 			  button(text : '<', actionPerformed : {equation.text += it.source.text})
 			  
