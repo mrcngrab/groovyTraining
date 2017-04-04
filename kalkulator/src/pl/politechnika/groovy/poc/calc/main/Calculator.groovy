@@ -16,7 +16,7 @@ public class Calculator {
 	def getKeyByValue(map, val) {
 		 map.each{
 			if(it.value.contains(val)) {
-				 {valu ->it.find()?.key}
+				 return it.find()?.key
 			}	
 		}
 	}
